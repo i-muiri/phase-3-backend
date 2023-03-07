@@ -3,19 +3,19 @@
 class UserController < AppController
     set :default_content_type, 'application/json'
    
-    configure do
-          enable :cross_origin
-        end 
-    # @helper: read JSON body
-    before do
-      response.headers['Access-Control-Allow-Origin'] = '*'
-    end
+    # configure do
+    #       enable :cross_origin
+    #     end 
+    # # @helper: read JSON body
+    # before do
+    #   response.headers['Access-Control-Allow-Origin'] = '*'
+    # end
   
-    options "*" do
-      response.headers["Allow"] = "GET, PUT, POST, DELETE, OPTIONS"
-      response.headers["Access-Control-Allow-Origin"] = "*"
-      200
-    end
+    # options "*" do
+    #   response.headers["Allow"] = "GET, PUT, POST, DELETE, OPTIONS"
+    #   response.headers["Access-Control-Allow-Origin"] = "*"
+    #   200
+    # end
   
     get "/user" do
       users = User.all
